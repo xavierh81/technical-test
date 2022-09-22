@@ -118,7 +118,7 @@ const Budget = ({ project }) => {
     })();
   }, []);
 
-  const total = activities.reduce((acc, cur) => acc + cur, 0);
+  const total = activities.reduce((acc, cur) => acc + cur.cost, 0);
   const budget_max_monthly = project.budget_max_monthly;
   const width = (100 * total) / budget_max_monthly || 0;
 
