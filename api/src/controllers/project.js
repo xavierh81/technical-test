@@ -19,7 +19,7 @@ router.get("/list", async (req, res) => {
 
 router.get("/:id", passport.authenticate("admin", { session: false }), async (req, res) => {
   try {
-    const data = await ProjectObject.find({ _id: req.params.id });
+    const data = await ProjectObject.findOne({ _id: req.params.id });
     return res.status(200).send({ ok: true, data });
   } catch (error) {
     capture(error);
