@@ -24,7 +24,9 @@ export default function ProjectView() {
   useEffect(() => {
     (async () => {
       const { data: u } = await api.get(`/project/${id}`);
-      setProject(u);
+      if (u && u.length === 1) {
+        setProject(u[0]);
+      }
     })();
   }, []);
 
