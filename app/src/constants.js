@@ -1,3 +1,5 @@
 const PERIOD = { MONTHLY: "MONTHLY", DAILY: "DAILY" };
 
-export { PERIOD };
+const NB_HOURS_PER_WORKDAY = 8;
+
+export { PERIOD, NB_HOURS_PER_WORKDAY };
