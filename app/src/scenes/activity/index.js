@@ -96,6 +96,11 @@ const Activities = ({ date, user, project }) => {
       const activity = activities[i];
       await api.remove(`/activity/${activity._id}`);
       toast.success(`Deleted ${activity.project}`);
+
+      // Remove activity from local state
+      const n = [...activities];
+      n.splice(i, 1);
+      setActivities(n);
     }
   }
 
