@@ -190,7 +190,7 @@ const Activities = ({ date, user, project }) => {
                           </th>
                           {e.detail.map((f, j) => {
                             return (
-                              <Field key={`${e.project} ${j}`} invoiced={e.invoiced} value={f.value || 0} onChange={(a) => onUpdateValue(i, j, parseFloat(a.target.value || 0))} />
+                              <Field key={`${e.project} ${j}`} invoiced={e.invoiced} value={f.value || ""} placeholder={0} onChange={(a) => onUpdateValue(i, j, parseFloat(a.target.value || 0))} />
                             );
                           })}
                           <th className={`border border-[#E5EAEF] py-[6px]`}>
